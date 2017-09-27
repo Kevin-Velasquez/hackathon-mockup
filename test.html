@@ -7,6 +7,27 @@
     <title>Development ENv.</title>
 </head>
 <body>
-    
+    <input type="text" id="userInput">Enter a Todo item, input 'done' when done.</input>
+    <button onclick="folderCreation()">New ToDo</button>
+    <button onclick="itemCreation()">Enter Item</button>
+    <script>
+        function folderCreation () {
+            itemCreation();
+        }
+        function itemCreation () {
+            var userInput = document.getElementById("userInput").value
+            var list = '';
+            while(userInput != "done") {
+                list += userInput;
+            }
+        }
+        function listDisplay () {
+
+        }
+      
+         
+    </script>
+
+
 </body>
 </html>
