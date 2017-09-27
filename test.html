@@ -36,21 +36,29 @@
                 <tr></tr>
             </table>
         </div>
-    </div>
-  
-    <input type="text" id="userInput">Enter a Todo item, input 'done' when done.</input>
-    <button onclick="folderCreation()">New ToDo</button>
+    </div> 
+    <button onclick="folderCreation()">New List</button>
     <button onclick="itemCreation()">Enter Item</button>
+    <input type="text" id="userInput">Enter a Todo</input>
+    <p id="demo"></p>
     <script>
+        var list = ' ';
         function folderCreation () {
             itemCreation();
         }
         function itemCreation () {
-            var userInput = document.getElementById("userInput").value
-            var list = '';
-            while(userInput != "done") {
+            var userInput = document.getElementById("userInput").value;
+            list += userInput;
+            list += '<br>';
+            document.getElementById("demo").innerHTML = list;
+            //list += ('\n' + userInput);
+            //while (userInput != "done") {
+            //    list += (userInput + '\n');
+            //}
+            /*for (var i = 0; i < 2; i++) {
                 list += userInput;
-            }
+            }*/
+            //document.getElementById("demo").innerHTML = list;
         }
         function listDisplay () {
 
