@@ -18,20 +18,33 @@
         <div class="jumbotron text-center">
             <form action="#">
                 <label for="userInput">TODO LIST</label>
-                <input type="text" id="userInput"><br>
+                <input type="text" id="userInput" placeholder="New To-do!"><br>
                 <input type="button" onclick="itemCreation()" value="Create">
             </form>
-            <p id="demo"></p>
+            <div id="main-div"></div>
         </div>
     </div>
   
     <script>
-        var list = ' ';
+        var userList = [];
+        var userInput;
+        var count = 0;
 
         function itemCreation () {
-            var userInput = document.getElementById("userInput").value;
-            list += userInput + '<br>';
-            document.getElementById("demo").innerHTML = list;
+            userInput = document.getElementById("userInput").value;
+            userList.push(userInput);
+            addElement(userInput);
+        }
+
+        function addElement(input) {
+            var newContent = document.createElement("div");
+            newContent.id = count++;
+            var newItem = document.createTextNode(input); 
+            newContent.appendChild(newItem);
+            var currentContent = document.getElementById("main-div");
+            currentContent.insertBefore(newContent, currentContent.childNodes[0]);
+            console.log(currentContent);
+            console.log(userList);
         }
        
     </script>
